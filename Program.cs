@@ -1,2 +1,81 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// https://github.com/s3rgs3m/CHash_HW3
+// Задача 19
+// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// 14212 -> нет
+// 12821 -> да
+// 23432 -> да
+
+// Задача 21
+// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+// A (3,6,8); B (2,1,-7), -> 15.84
+// A (7,-5, 0); B (1,-1,9) -> 11.53
+
+// Задача 23
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
+
+Console.Clear();
+Console.Write ("Введите номер задачи 19, 21 или 23: ");
+if (int.TryParse(Console.ReadLine(), out int taskNum)){
+    switch (taskNum) {
+        case 19: //Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+            Console.Clear();
+            Console.WriteLine("Задача 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.");
+            Console.Write("\nВведите число: ");
+            if (int.TryParse(Console.ReadLine(), out int number19))
+                if (number10 < 10000 || number10 > 99999)
+                    Console.WriteLine ("Число должно быть пятизначным");
+                else 
+                    Console.WriteLine ($"Число '{number19}' - это");
+            else
+                Console.WriteLine ("Число введено неправильно");
+            break;
+
+        case 21: // Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+            Console.Clear();
+            Console.WriteLine("Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.");
+/*                Console.Write("\nВведите цифру: ");
+                if (int.TryParse(Console.ReadLine(), out int number13)){
+                    // решение через string:
+                    Console.WriteLine("Решение через массив в String:");
+                    string str = number13.ToString();
+                    Console.WriteLine (str.Length > 2 ? $"\tТретья цифра в числе '{str}': {str[2]}" : $"\tВ числе '{str}' нет 3й цифры");
+
+                    //решение без массива:
+                    Console.WriteLine("\nРешение без массива:");
+                    if (number13 / 100 >0 ){
+
+                        int third = 0;
+                        int partOfNumber = number13;
+                        
+                        while (partOfNumber > 99){
+                            third = partOfNumber % 10;
+                            partOfNumber = partOfNumber / 10;
+                        }
+                        Console.WriteLine($"\tТретья цифра в числе '{number13}': {third}");
+                    }
+                    else 
+                        Console.WriteLine ($"\tВ числе '{number13}' нет 3й цифры");
+                }
+                else
+                Console.WriteLine ("Введено не число int");
+ */
+            break;
+
+        case 23: // Задача 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+            Console.Clear();
+            Console.WriteLine("Задача 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.");
+                Console.Write("\nВведите число N: ");
+                if (int.TryParse(Console.ReadLine(), out int number19) && (number19 >0))
+                        Console.WriteLine (number19 > 5 ? "выходной" : "рабочий");
+                else
+                    Console.WriteLine ("Число N введено неправильно");       
+            break;
+        default:
+            Console.WriteLine("Такого номера задачи нет");
+            break;
+    }
+}
+else
+    Console.WriteLine ("Введен не номер задачи");
