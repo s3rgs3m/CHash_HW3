@@ -27,11 +27,18 @@ if (int.TryParse(Console.ReadLine(), out int taskNum)){
                 if (number19 < 10000 || number19 > 99999)
                     Console.WriteLine ("Число должно быть пятизначным");
                 else{
+                    Console.WriteLine ("С массивом string"); // Решение через string
                     string strNum = number19.ToString();
                     if (strNum[0] == strNum[4] && strNum[1] == strNum[3])
-                        Console.WriteLine ($"Число '{number19}' - это палиндром");
+                        Console.WriteLine ($"\tЧисло '{number19}' - это палиндром");
                     else
-                        Console.WriteLine ($"Число '{number19}' - это не палиндром");
+                        Console.WriteLine ($"\tЧисло '{number19}' - это не палиндром");
+
+                    Console.WriteLine ("Через деление и остаток от деления"); // Решение через деление
+                    if ((number19 / 10000 == number19 % 10) && ((number19 / 1000) % 10 == (number19 % 100) / 10))
+                        Console.WriteLine ($"\tЧисло '{number19}' - это палиндром");
+                    else
+                        Console.WriteLine ($"\tЧисло '{number19}' - это не палиндром");
                 }
             else
                 Console.WriteLine ("Число введено неправильно");
