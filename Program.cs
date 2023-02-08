@@ -24,7 +24,7 @@ if (int.TryParse(Console.ReadLine(), out int taskNum)){
             Console.WriteLine("Задача 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.");
             Console.Write("\nВведите число: ");
             if (int.TryParse(Console.ReadLine(), out int number19))
-                if (number10 < 10000 || number10 > 99999)
+                if (number19 < 10000 || number19 > 99999)
                     Console.WriteLine ("Число должно быть пятизначным");
                 else 
                     Console.WriteLine ($"Число '{number19}' - это");
@@ -33,6 +33,7 @@ if (int.TryParse(Console.ReadLine(), out int taskNum)){
             break;
 
         case 21: // Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+        // формула: AB = ((Xb - Xa)^2 + (Yb - Ya)^2 + (Zb - Za)^2)^1/2
             Console.Clear();
             Console.WriteLine("Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.");
 /*                Console.Write("\nВведите цифру: ");
@@ -67,8 +68,9 @@ if (int.TryParse(Console.ReadLine(), out int taskNum)){
             Console.Clear();
             Console.WriteLine("Задача 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.");
                 Console.Write("\nВведите число N: ");
-                if (int.TryParse(Console.ReadLine(), out int number19) && (number19 >0))
-                        Console.WriteLine (number19 > 5 ? "выходной" : "рабочий");
+                if (int.TryParse(Console.ReadLine(), out int number23) && (number23 >0))
+                        for (int i=1; i <= number23;i++)
+                            Console.Write(i > 1 ? $", {Math.Pow(i,3)}" : $"\n{Math.Pow(i,3)}");
                 else
                     Console.WriteLine ("Число N введено неправильно");       
             break;
