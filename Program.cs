@@ -48,32 +48,23 @@ if (int.TryParse(Console.ReadLine(), out int taskNum)){
         // формула: AB = ((Xb - Xa)^2 + (Yb - Ya)^2 + (Zb - Za)^2)^1/2
             Console.Clear();
             Console.WriteLine("Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.");
-/*                Console.Write("\nВведите цифру: ");
-                if (int.TryParse(Console.ReadLine(), out int number13)){
-                    // решение через string:
-                    Console.WriteLine("Решение через массив в String:");
-                    string str = number13.ToString();
-                    Console.WriteLine (str.Length > 2 ? $"\tТретья цифра в числе '{str}': {str[2]}" : $"\tВ числе '{str}' нет 3й цифры");
+            Console.Write("\nВведите координаты 1й точки в виде 'Х, Y, Z': ");
+            string [] point = {""};
+            int x1, y1, z1, x2, y2, z2;
+            point = Console.ReadLine().Split(',','.');
+            while (!(int.TryParse(point[0].Trim(), out x1) && int.TryParse(point[1].Trim(), out y1) && int.TryParse(point[2].Trim(), out z1))){
+                Console.Write("Введите координаты 1й точки в виде 'Х, Y, Z': ");
+                point = Console.ReadLine().Split(',','.');
+            }
+            Console.Write("\nВведите координаты 2й точки в виде 'Х, Y, Z': ");
+            point = Console.ReadLine().Split(',','.');
+            while (!(int.TryParse(point[0].Trim(), out x2) && int.TryParse(point[1].Trim(), out y2) && int.TryParse(point[2].Trim(), out z2))){
+                Console.Write("Введите координаты 2й точки в виде 'Х, Y, Z': ");
+                point = Console.ReadLine().Split(',','.');
+            }
+            double rng = Math.Round(Math.Sqrt(Math.Pow(x2-x1,2) + Math.Pow(y2-y1,2) + Math.Pow(z2-z1,2)),2);
+            Console.WriteLine ($"Расстояние между точками ({x1}, {y1}, {z1}) и ({x2}, {y2}, {z2}) = {rng}");
 
-                    //решение без массива:
-                    Console.WriteLine("\nРешение без массива:");
-                    if (number13 / 100 >0 ){
-
-                        int third = 0;
-                        int partOfNumber = number13;
-                        
-                        while (partOfNumber > 99){
-                            third = partOfNumber % 10;
-                            partOfNumber = partOfNumber / 10;
-                        }
-                        Console.WriteLine($"\tТретья цифра в числе '{number13}': {third}");
-                    }
-                    else 
-                        Console.WriteLine ($"\tВ числе '{number13}' нет 3й цифры");
-                }
-                else
-                Console.WriteLine ("Введено не число int");
- */
             break;
 
         case 23: // Задача 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
